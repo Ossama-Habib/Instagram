@@ -1,0 +1,64 @@
+.home{
+    min-height: 100vh;
+    color: white;
+}
+.home__bottom{
+    display: flex;
+    gap: 1rem;
+    background-color: black;
+
+}
+
+.home__header{
+    display: none;
+}
+
+.home__header_wrapper{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    /* display: none; */
+}
+
+.home__header_inp{
+    width: 200px;
+    align-self: center;
+    position: relative;
+}
+
+.home__header_inp > input{
+    width: 100%;
+}
+
+.home__header_inp > .home__header_user{
+    position: absolute;
+    top: 20px;
+    height: 300px;
+    width: 300px;
+    border: 1px solid red;
+    z-index: 2;
+    background-color: black;
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.users > img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:764px){
+    .home__header{
+        display: block;
+    }
+}

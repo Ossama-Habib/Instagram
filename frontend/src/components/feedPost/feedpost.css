@@ -1,0 +1,133 @@
+.feedPost{
+    margin:10px auto;
+    color: white;
+    padding-bottom: .75rem;
+    width: 60%;
+    overflow-y: auto;
+}
+
+.feedPost__wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.feedPost__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedPost__top_left{
+    display: flex;
+    gap: .5rem;
+}
+
+.feedPost__top_left > p{
+    align-self: center;
+}
+
+.feedPost__top_left > img{
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.feedPost__top_rightIcon{
+    align-self: center;
+}
+
+/* Middle */
+
+.feedPost__middle{
+    border: 1px solid gray;
+    height: 90vh;
+    margin: .5rem 0;
+}
+
+.feedPost__middle > img{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Bottom */
+
+.feedPost__bottom{
+    border-bottom: 1px solid lightgray;
+}
+.bottom__iteraction_icon{
+    margin: 0 .5rem;
+    font-size: 1.75rem;
+    /* color: red; */
+    cursor: pointer;
+}
+
+.feedPost__bottom_caption {
+    display: flex;
+    gap: .3rem;
+}
+
+.bottom__caption_user{
+    font-weight: 700;
+}
+
+.feedPost__bottom_viewcomment{
+    border: none;
+    background-color: transparent;
+    margin: .5rem 0;
+    cursor: pointer;
+    color: gray;
+    font-size: .75rem;
+}
+
+/* Bottom Form */
+.feedPost__bottom > form{
+    display: flex;
+}
+.feedPost__comment_form > textarea{
+    resize: none;
+    width: 90%;
+    min-height: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+
+.feedPost__comment_form > button{
+    border: none;
+    background-color: transparent;
+    color: blue;
+    cursor: pointer;
+    font-size: 1.2rem;
+    align-self:start;
+}
+
+@media screen and (max-width: 764px) {
+    .feedPost{
+        padding-bottom: 4.5rem;
+        margin: 10px;
+        width: 96%;
+    }
+    .feedPost__middle{
+        /* width: ; */
+        border: 1px solid gray;
+        height: 600px;
+        margin: .5rem 0;
+    }
+    
+    .feedPost__middle > img{
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid green; */
+        object-fit: contain;
+        border-radius: 4px;
+    }
+    
+}

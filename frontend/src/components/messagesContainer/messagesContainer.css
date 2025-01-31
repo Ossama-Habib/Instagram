@@ -1,0 +1,131 @@
+.messagesContainer{
+    width: 100%;
+    padding: 1.5rem 0;
+    height: 100vh;
+    color: white;
+}
+
+.messagesContainer__wrapper{
+    background-color: black;
+    padding: 5px;
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    gap: .5rem;
+
+}
+
+.messagesContainer__users{
+    width: 35%;
+    border-right: 2px solid rgba(128, 128, 128, 0.342);
+    padding-right: .5rem;
+    overflow-y: auto;
+}
+
+.messagesContainer__users_user{
+    display: flex;
+    gap: .5rem;
+    background-color: rgba(128, 128, 128, 0.329);
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: .2rem;
+    cursor: pointer;
+}
+
+.image{
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.messagesContainer__users_user > p{
+    align-self: center;
+}
+
+/* ==== Conversation ===== */
+.messagesContainer__conversation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messagesContainer__conversation_top{
+    padding: 5px;
+    display: flex;
+    gap: .5rem;
+    border-bottom: 1px solid gray;
+}
+
+.messagesContainer__conversation_top > p{
+    align-self: center;
+    
+}
+
+.messagesContainer__conversation_middle{
+    /* border: 1px solid red; */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.messagesContainer__conversation_middle > p {
+    background-color: palegreen;
+    width:150px;
+    border-radius: .1rem;
+    margin-top: .2rem;
+    padding: .1rem;
+    color: black;
+    align-self: end;
+}
+
+.message-end {
+    text-align: right;
+    align-self: flex-end;
+}
+
+.message-start {
+    text-align: left;
+    align-self: flex-start;
+}
+.messagesContainer__conversation_bottom{
+    padding: 5px;
+}
+.messagesContainer__conversation_bottom > form > input{
+    width: 100%;
+    background-color: transparent;
+    padding: .5rem;
+    outline: none;
+    border: 1px solid gray;
+    color: white;
+    border-radius: 3px;
+}
+
+
+.messagesContainer__conversation_bottom > form > input::placeholder{
+    color: white;
+}
+
+.messageContaienr__selectUser{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 586px) {
+    .messagesContainer{
+        padding-bottom: 4.5rem;
+    }
+    .messagesContainer__users_user > p{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .messagesContainer{
+        padding-bottom: 4.5rem;
+    }
+}

@@ -1,0 +1,47 @@
+.login{
+    border: 1px solid;
+    width: 35%;
+    border-radius: 10px;
+}
+
+.login__wrapper{
+    padding: 10px;
+}
+
+.login__form > h1{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.login__form > label{
+    display: block;
+    margin: 15px 0;
+}
+
+.login__form > input{
+    width: 100%;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.login__form_button{
+    margin: 2rem 0;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    background-color: rebeccapurple;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.login__noaccout{
+    text-align: center;
+}
+
+@media screen and (max-width: 763px){
+    .login{
+        width: 70%;
+    }
+}

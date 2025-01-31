@@ -1,0 +1,131 @@
+.comments{
+    width: 50%;
+    height: 100%;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+}
+
+.comments__top{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+.comments__top_info{
+    display: flex;
+    gap: 1rem;
+}
+
+.comments__top_info > img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ---------- */
+.top__info_right{
+    position: relative;
+}
+
+.top__info_delete{
+    position: absolute;
+    top: 15px ;
+    right: 25px;
+    width: 90px;
+    height: 40px;
+    /* border: 1px solid red; */
+    display: none;
+}
+
+.top__info_delete > button{
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: .25rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* --------- */
+.comments__topinfo_moreicon{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.comments__middle{
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-corner{
+    color: white;
+}
+
+.comments__postcomment{
+    display: flex;
+    gap: 1rem;
+    padding: 10px;
+    border: 1px solid rgba(211, 211, 211, 0.356);
+}
+
+.comments__postcomment > img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Bottom */
+.comments__botom{
+    padding: 10px;
+    border: 1px solid rgba(211, 211, 211, 0.18);
+}
+
+.comment__iteraction_icon{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.comment__iteraction > p{
+    margin: .5rem 0;
+    font-weight: 100;
+}
+
+.post__comment{
+    border-top: 1px solid rgba(211, 211, 211, 0.217);
+}
+
+.post__comment > textarea{
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    margin-top: .5rem;
+    color: white;
+    resize: none;
+    padding: 10px;
+    outline: none;
+}
+
+
+.post__comment > button{
+    background-color: transparent;
+    color: midnightblue;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
