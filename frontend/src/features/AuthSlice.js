@@ -15,9 +15,11 @@ export const logeinUser = createAsyncThunk('/user/login', async (userInfo, thunk
         if(response.status === 200){
             return data
         }
+        if(response.status === 401){
+            return thunkAPI.rejectWithValue(data)
+        }
         
     } catch (error) {
-        // Add Toast
         console.log(`Error in loggedin \n ${error.message}`)
     }
 })
@@ -34,6 +36,9 @@ export const registerUser = createAsyncThunk('/user/register', async (userInfo, 
             credentials: 'include'
         })
         const data = await response.json()
+        if(response.status === 400 || response.status === 401){
+            return thunkAPI.rejectWithValue(data)
+        }
     } catch (error) {
         console.log(`Error in Register User \n ${error.message}`)
     }
@@ -43,14 +48,16 @@ const initialState = {
     isUserLoggedIn: JSON.parse(localStorage.getItem('userLoggedIn'))?.isUserLoggedIn || false,
     loggedInUserId: JSON.parse(localStorage.getItem('userLoggedIn'))?.loggedInUserId,
     userRegisterd:  false,
-    
+    errorMessage : ''
 }
 
 const AuthSlice = createSlice({
     name: "AuthSlice",
     initialState,
     reducers:{
-
+        clearErrorMessage : (state) => {
+            state.errorMessage = ''
+        }
     },
     extraReducers:(builder) => {
         builder
@@ -63,6 +70,9 @@ const AuthSlice = createSlice({
             state.loggedInUserId = payload.id
             localStorage.setItem('userLoggedIn', JSON.stringify({isUserLoggedIn: true, loggedInUserId: payload.id}))
         })
+        .addCase(logeinUser.rejected, (state, {payload}) => {
+            state.errorMessage = payload.msg
+        })
         .addCase(registerUser.pending, (state) => {
             state.isLoading = true
         })
@@ -70,7 +80,11 @@ const AuthSlice = createSlice({
             state.isLoading = false
             state.userRegisterd = true
         })
+        .addCase(registerUser.rejected, (state, {payload}) => {
+            state.errorMessage = payload.msg
+        })
     }
 })
 
+export const {clearErrorMessage} = AuthSlice.actions
 export default AuthSlice.reducer

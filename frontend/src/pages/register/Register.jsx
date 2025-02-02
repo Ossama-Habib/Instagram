@@ -13,6 +13,9 @@ const Register = () => {
   const registerFormHandler = (e) => {
     e.preventDefault()
     dispatch(registerUser({userName, email, password}))
+    setUserName("")
+    setEmail('')
+    setPassword('')
   }
 
   return (

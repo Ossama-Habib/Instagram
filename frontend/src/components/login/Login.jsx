@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './login.css'
 import { logeinUser } from '../../features/AuthSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link , useNavigate, Navigate} from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -14,6 +14,8 @@ const Login = () => {
     const loginFormHandler = (e) => {
         e.preventDefault()
         dispatch(logeinUser({email,password}))
+        setEmail('')
+        setPassword('')
     }
 
     useEffect(() => {

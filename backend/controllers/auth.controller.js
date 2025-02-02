@@ -6,7 +6,10 @@ const register = async (req, res) => {
     const {email} = req.body
 
     const user = await Auth.findOne({email})
-    
+    if(user){
+        return res.status(400).json({msg:"Email is already Taken"})
+
+    }
     const auth = await Auth.create(req.body)        
     return res.status(200).json(auth)
     
@@ -19,7 +22,6 @@ const login = async (req, res) => {
            throw new BadRequestError('Please Provide Correct Credentials')
         }
         const user = await Auth.findOne({email})
-
         if(!user){
            throw new BadRequestError('User Does Not Exist Pleas Register')
         }

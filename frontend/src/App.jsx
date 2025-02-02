@@ -14,6 +14,7 @@ import CreateStory from "./components/createStory/CreateStory"
 import { useContext } from 'react';
 import { ModelContext } from "./context/modelContext"
 import Story from "./components/Story/Story"
+import Toast from "./components/toast/Toast"
 
 function App() {
   const {isPostModalOpen} = useSelector(store => store.postInfo)
@@ -21,13 +22,13 @@ function App() {
   
   return (
     <>
+     <Toast />
       {isPostModalOpen &&
         <CreatePost/>
       }
       {storyModalOpen && 
         <CreateStory storyModalOpen = {setStoryModalOpen} setStoryModalOpen = {setStoryModalOpen}/>
       }
-      {/* <Story /> */}
     <main>
       <Routes>
         <Route path="/" element ={<ProtectedRoutes />}>

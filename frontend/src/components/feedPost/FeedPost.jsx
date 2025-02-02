@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
-const FeedPost = ({ item }) => {
+const FeedPost = ({ item}) => {
   const navigate = useNavigate()
   const { loggedInUserId } = useSelector(store => store.auth)
   const [like, setLike] = useState(item.likes.includes(loggedInUserId) || false)
   const [postLikes, setPostLikes] = useState(item.likes.length)
-
-  const handleClick = async (post) => {
+  
+  const handleClick = async () => {
 
     try {
       const POSTLIKE_URI = `${import.meta.env.VITE_POSTLIKE_URI }/${item._id}/like`
@@ -39,7 +39,6 @@ const FeedPost = ({ item }) => {
   return (
     <section className='feedPost'>
           <div className="feedPost__wrapper">
-
             <div className="feedPost__top">
               <div className="feedPost__top_left" onClick={() => navigate(`/${item.author._id}`)}>
                 <img src={item.author.profileImg} alt="" />
@@ -60,7 +59,7 @@ const FeedPost = ({ item }) => {
               </div>
               <p>{postLikes} likes</p>
               <div className="feedPost__bottom_caption">
-                <p className='bottom__caption_user'>Usama</p>
+                <p className='bottom__caption_user'>{item.author.userName}</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita?</p>
               </div>
 

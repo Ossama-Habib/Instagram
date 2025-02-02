@@ -12,7 +12,6 @@ export const userInfo = createAsyncThunk('/userinfo', async (userId ,thunkAPI) =
                 credentials: 'include'
             })
             const data = await response.json()
-            console.log(data)
             return {data, loggedInUserId}
             
 
